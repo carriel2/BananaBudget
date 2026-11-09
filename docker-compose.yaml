@@ -1,0 +1,11 @@
+services:
+  bananabudget:
+    build: .
+    container_name: bananabudget_app
+    restart: always
+    ports:
+      - "8501:8501"
+    volumes:
+      # Mapeia a pasta local './dados' para a pasta '/app/dados' no container.
+      # É isso que garante que seu banco de dados sobreviva a reboots!
+      - ./dados:/app/dados
